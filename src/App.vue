@@ -9,7 +9,9 @@
       <h1>Planificador de Gastos</h1>
 
       <div class="contenedor-header contenedor sombra">
-        <Presupuesto/>
+        <Presupuesto
+        
+        />
       </div>
     </header>
   </div>
