@@ -1,6 +1,13 @@
 <script setup>
+  import { ref } from 'vue';
   import Filtro from './components/Filtro.vue';
   import Presupuesto from './components/Presupuesto.vue';
+
+  const presupuesto = ref(0);
+
+  const definirPresupuesto = (cantidad) => {
+    presupuesto.value = cantidad;
+  };
 </script>
 
 <template>
@@ -9,7 +16,8 @@
       <h1>Planificador de Gastos</h1>
 
       <div class="contenedor-header contenedor sombra">
-        <Presupuesto />
+        <Presupuesto 
+        @definir-presupuesto = "definirPresupuesto"/>
       </div>
     </header>
   </div>
