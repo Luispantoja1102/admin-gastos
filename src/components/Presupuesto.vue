@@ -8,12 +8,15 @@
     const emit = defineEmits(['definir-presupuesto'])
 
     const definirPresupuesto = ()=>{
-        if(presupuesto.value <= 0){
+        if(presupuesto.value <= 0 || presupuesto.value === ''){
             error.value='Definir Presupuesto'
+        
+            setTimeout(()=>{
+                error.value=''
+            },3000);
+
+            return
         }
-        setTimeout(()=>{
-            error.value=''
-        },3000);
 
         emit('definir-presupuesto', presupuesto.value)
     }
