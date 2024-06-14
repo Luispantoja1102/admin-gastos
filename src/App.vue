@@ -24,6 +24,10 @@ const modal = reactive({
     modal.mostrar=true;
     modal.animar=true;
   };
+  const ocultarModal = () => {
+    modal.mostrar=false;
+    modal.animar=false;
+  };
 </script>
 
 <template>
@@ -51,7 +55,8 @@ const modal = reactive({
         @click="mostrarModal"
         >
       </div>
-      <Modal v-if="modal.mostrar"/>
+      <Modal v-if="modal.mostrar"
+      @ocultar-modal= "ocultarModal"/>
     </main>
   </div>
 </template>
