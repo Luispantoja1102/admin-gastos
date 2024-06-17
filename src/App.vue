@@ -49,6 +49,17 @@ const modal = reactive({
       ...gasto,
       id: generarId(),
     });
+
+    ocultarModal();
+
+    //reiniciar el objeto
+    Object.assign(gasto, {
+      nombre: '',
+      cantidad: '',
+      categoria: '',
+      id: null,
+      fecha: Date.now(),
+      });
   };
 </script>
 
